@@ -1,0 +1,528 @@
+.header-propiedades {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 🔹 Alinea el contenido (botón y buscador) con las tarjetas */
+  padding-left: 20px; /* 🔹 Ajusta el margen izquierdo igual que las tarjetas */
+  padding-right: 20px;
+}
+
+/* Eliminar margen del h2 */
+.header-propiedades h2 {
+  margin: 0 0 10px 0;
+}
+
+.btn-agregar-propiedad {
+  background: #4FC3F7; /* Azul claro */
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px; /* Menos padding para que sea más compacto */
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px; /* Texto más pequeño */
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content; /* Solo el ancho necesario */
+}
+
+.btn-agregar-propiedad:hover {
+  background: #29B6F6; /* Azul más oscuro al hacer hover */
+}
+
+.listado-propiedades {
+  list-style: none;
+  padding: 0;
+  margin: 0 20px;
+}
+
+/*-----------------------------*/
+
+/* Contenedor general de cada propiedad */
+.propiedad {
+  background-color: #fff; /* Fondo blanco más limpio */
+  border: 1px solid #e0e0e0; /* Borde más sutil */
+  padding: 0; /* Sin padding para usar en secciones internas */
+  margin-bottom: 1.5rem; /* Más espacio entre tarjetas */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra profesional */
+  overflow: hidden; /* Evita que el contenido se salga de los bordes redondeados */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover para toda la tarjeta */
+.propiedad:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* NUEVA SECCIÓN: Contenedor de imagen */
+.propiedad-imagen {
+  width: 100%;
+  height: 200px; /* Altura fija para uniformidad */
+  overflow: hidden;
+}
+
+/* Imagen de la propiedad */
+.imagen-propiedad {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene aspecto y recorta si es necesario */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto zoom en hover de imagen */
+.propiedad:hover .imagen-propiedad {
+  transform: scale(1.05);
+}
+
+/* Contenedor del contenido (info + botones) */
+.propiedad-contenido {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Sección con los datos de la propiedad */
+.info-propiedad {
+  flex: 1; /* Crece para ocupar espacio disponible */
+  padding: 1.5rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Cada párrafo dentro de la info */
+.info-propiedad p {
+  margin: 0.5rem 0; /* Más separación vertical entre líneas */
+}
+
+/* Contenedor de botones - NUEVO DISEÑO PROFESIONAL */
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa; /* Fondo gris claro para separar */
+  border-top: 1px solid #e9ecef; /* Línea divisoria sutil */
+  margin-top: auto; /* Empuja los botones hacia abajo */
+}
+
+/* Estilo base para los botones - MÁS PROFESIONAL */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem ; /* Botones más amplios */
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease;
+  flex: 0 0 auto; /* Botones ocupan el mismo ancho */
+  min-height: 40px; /* Altura mínima consistente */
+  min-width: 150px;
+}
+
+/* Botón azul (Editar) - COLORES ORIGINALES */
+.btn-azul {
+  background-color: #0056b3; /* Azul sólido original (sin gradiente) */
+  box-shadow: 0 2px 4px rgba(0, 86, 179, 0.3); /* Sombra sutil con el color base */
+}
+
+.btn-azul:hover {
+  background-color: #004494; /* Azul más oscuro en hover (sin gradiente) */
+  transform: translateY(-1px); /* Efecto de elevación al hacer hover */
+  box-shadow: 0 4px 8px rgba(0, 86, 179, 0.4); /* Sombra más pronunciada en hover */
+}
+
+/* Botón rojo (Eliminar) - COLORES ORIGINALES */
+.btn-rojo {
+  background-color: #8b0000; /* Rojo sólido original (sin gradiente) */
+  box-shadow: 0 2px 4px rgba(139, 0, 0, 0.3); /* Sombra sutil con el color base */
+}
+
+.btn-rojo:hover {
+  background-color: #5a0000; /* Rojo más oscuro en hover (igual que antes) */
+  transform: translateY(-1px); /* Efecto de elevación al hacer hover */
+  box-shadow: 0 4px 8px rgba(139, 0, 0, 0.4); /* Sombra más pronunciada en hover */
+}
+
+.propiedad .info-propiedad p {
+  color: #333;
+}
+
+.etiqueta {
+  color: #6b7280; /* Gris más moderno */
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+}
+
+.valor {
+  color: #111827; /* Negro más suave */
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* Estado dinámico para propiedades - COLORES MODERNOS */
+.estado.disponible {
+  color: #10b981; /* Verde moderno */
+  font-weight: 600;
+}
+
+.estado.vendido {
+  color: #ef4444; /* Rojo moderno */
+  font-weight: 600;
+}
+
+.estado.alquilado {
+  color: #f59e0b; /* Naranja moderno */
+  font-weight: 600;
+}
+
+.estado.reservado {
+  color: #eab308; /* Amarillo moderno */
+  font-weight: 600;
+}
+
+.estado.inactivo {
+  color: #6b7280; /* Gris moderno */
+  font-weight: 600;
+}
+
+/* RESPONSIVO - En móviles, cambiar layout */
+@media (max-width: 768px) {
+  .propiedad-imagen {
+    height: 160px; /* Imagen más pequeña en móvil */
+  }
+  
+  .info-propiedad {
+    padding: 1rem;
+  }
+  
+  .acciones {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  
+  .btn {
+    flex: none; /* En móvil, botones no se estiran */
+  }
+}
+
+/*-------------CSS para formulario nueva/editar propiedad--------------*/
+
+/* Reset para tamaños consistentes */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Contenedor general del formulario */
+.propiedad-form {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grupos de campos */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Título */
+.propiedad-form h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333;
+}
+
+/* Etiquetas */
+.propiedad-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* Inputs, selects y textareas */
+.propiedad-form input,
+.propiedad-form select,
+.propiedad-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease-in-out;
+  box-sizing: border-box; /* evita que se salgan */
+}
+
+/* Efecto al enfocar los campos */
+.propiedad-form input:focus,
+.propiedad-form select:focus,
+.propiedad-form textarea:focus {
+  border-color: #3b82f6; /* azul */
+  outline: none;
+}
+
+/* Ajustes específicos para textarea */
+.propiedad-form textarea {
+  resize: vertical; /* Solo se puede crecer hacia abajo */
+  min-height: 80px;
+  max-height: 200px;
+}
+
+/* Botón del formulario */
+.propiedad-form button {
+  display: block;
+  width: 100%;
+  background-color: #3b82f6; /* azul */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.propiedad-form button:hover {
+  background-color: #2563eb; /* azul más oscuro */
+}
+
+/* Mensajes */
+.propiedad-form p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.form-button:disabled {
+  background-color: #ccc; /* gris claro */
+  cursor: not-allowed; /* mano bloqueada */
+  opacity: 0.6; /* más transparente */
+}
+
+/* ESTILOS PARA PREVIEW DE MÚLTIPLES IMÁGENES EN FORMULARIO */
+.images-preview {
+  margin-top: 10px;
+}
+
+.image-preview-item {
+  position: relative; /* Para posicionar el botón de eliminar */
+  display: inline-block;
+  margin: 5px;
+}
+
+.preview-img {
+  width: 120px; /* Tamaño más pequeño para múltiples imágenes */
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón X para eliminar imagen individual */
+.remove-image-btn {
+  position: absolute;
+  top: 5px; /* Ajustado para que el botón esté dentro de los límites */
+  right: 5px; /* Ajustado para que el botón esté dentro de los límites */
+  background-color: #ff4d4d; /* Un rojo más vibrante */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px; /* Tamaño más grande para que resalte */
+  height: 30px; /* Tamaño más grande para que resalte */
+  font-size: 1.2em; /* Fuente más grande */
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra más definida */
+  transition: background-color 0.3s ease;
+}
+
+.remove-image-btn:hover {
+  background-color: #ff1a1a; /* Rojo más oscuro al pasar el cursor */
+}
+
+.preview-info {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+  text-align: center;
+}
+/*----*/
+
+/* NUEVA SECCIÓN: Contenedor de galería de imágenes en PropiedadItem */
+.propiedad-galeria {
+    display: flex; /* Para que las imágenes se coloquen en fila */
+    overflow-x: auto; /* Permite desplazamiento horizontal si hay muchas imágenes */
+    scroll-snap-type: x mandatory; /* Para un scroll más suave y "enganchado" */
+    -webkit-overflow-scrolling: touch; /* Mejor desplazamiento en iOS */
+    gap: 8px; /* Espacio entre las imágenes */
+    padding: 10px; /* Un poco de padding interno */
+    background-color: #f0f0f0; /* Fondo sutil para la galería */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Estilo para cada imagen dentro de la galería de PropiedadItem */
+.imagen-propiedad-galeria {
+    flex-shrink: 0; /* Evita que las imágenes se "encojan" */
+    width: 180px; /* Ancho fijo para cada imagen en la galería (ajusta si es necesario) */
+    height: 120px; /* Altura fija */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin distorsión */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start; /* Ayuda al "snap" del scroll */
+}
+
+/* Opcional: Estilo para la barra de desplazamiento en la galería */
+.propiedad-galeria::-webkit-scrollbar {
+    height: 8px;
+}
+
+.propiedad-galeria::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.propiedad-galeria::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.propiedad-galeria::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ...el resto de tus estilos CSS... */
+
+
+.propiedad-imagen {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.imagen-propiedad {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.propiedad:hover .imagen-propiedad {
+  transform: scale(1.05);
+}
+
+.images-preview .image-preview-item .remove-image-btn {
+  background-color: #ff4d4d !important;
+  color: white !important;
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) !important;
+  transition: background-color 0.3s ease !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+}
+
+.images-preview .image-preview-item .remove-image-btn:hover {
+  background-color: #ff1a1a !important;
+}
+
+
+
+/* ===== PLACEHOLDER compacto cuando NO hay imágenes ===== */
+.propiedad-imagen:has(.imagen-placeholder) {
+  height: 60px; /* Altura MUY REDUCIDA solo para el placeholder */
+  background-color: #f8f9fa; /* Fondo gris claro */
+  border-bottom: 1px solid #e5e7eb; /* Línea divisoria sutil */
+  display: flex; /* Para centrar el contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+/* ===== Contenido del placeholder ===== */
+.imagen-placeholder {
+  display: flex; /* Layout horizontal: emoji + texto */
+  align-items: center; /* Centrar verticalmente */
+  gap: 8px; /* Espacio entre emoji y texto */
+  color: #9ca3af; /* Color gris claro */
+  font-size: 12px; /* Texto pequeño */
+}
+
+.imagen-placeholder span {
+  font-size: 20px; /* Emoji pequeño */
+  opacity: 0.5; /* Muy transparente */
+}
+
+.imagen-placeholder p {
+  margin: 0; /* Sin márgenes */
+  font-weight: 400; /* Texto normal */
+  font-size: 11px; /* Texto muy pequeño */
+  opacity: 0.7; /* Semi-transparente */
+}
+
+/* 🔍 Campo de búsqueda de propiedades */
+
+.input-busqueda {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  margin-top: 8px; /* 🔹 Separación del botón */
+  margin-bottom: 16px; /* 🔹 Espacio inferior para que no quede pegada a la primera tarjeta */
+}
+
+
+/* Separación respecto al botón */
+.header-propiedades .input-busqueda {
+  margin-top: 6px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .input-busqueda {
+    width: 100%;
+    max-width: none;
+  }
+}
+/* 🔧 Ajuste para alinear el buscador con las tarjetas */
+.input-busqueda {
+  display: block;
+  width: calc(100% - 40px); /* iguala el ancho restando márgenes de 20px */
+  margin: 20px 20px 15px 20px; /* igual margen lateral que las tarjetas */
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}

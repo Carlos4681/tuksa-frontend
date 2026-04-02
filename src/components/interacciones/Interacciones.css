@@ -1,0 +1,235 @@
+/* === CONTENEDOR GENERAL === */
+.listado-interacciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.interaccion {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.interaccion:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* === ENCABEZADO === */
+.interaccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.tipo-badge {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+/* Colores por tipo */
+.tipo-badge.llamada {
+  background: #e1f0ff;
+  color: #0077cc;
+}
+
+.tipo-badge.visita {
+  background: #fff3cd;
+  color: #b88a00;
+}
+
+.tipo-badge.tarea {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.tipo-badge.email {
+  background: #ede7f6;
+  color: #5e35b1;
+}
+
+/* === ESTADO DE TAREAS === */
+.tarea-estado {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 3px 8px;
+  font-weight: 500;
+}
+
+.tarea-estado.completada {
+  background: #d4edda;
+  color: #155724;
+}
+
+.tarea-estado.pendiente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* === INFORMACIÓN DE LA INTERACCIÓN === */
+.info-interaccion p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.etiqueta {
+  font-weight: 600;
+  color: #333;
+}
+
+.valor {
+  color: #555;
+}
+
+/* Resultado con color */
+.resultado.exitosa {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.resultado.no-contesta {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.resultado.pendiente {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.resultado.cancelada {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.resultado.reprogramada {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* === BOTONES DE ACCIÓN === */
+.interaccion .acciones {
+  display: flex;
+  flex-wrap: nowrap; /* 🔹 No permite salto de línea */
+  justify-content: space-between; /* 🔹 Distribuye equitativamente los botones */
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.interaccion .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px; 
+  padding: 5px 8px; 
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+  min-width: 70px; /* 🔹 Garantiza uniformidad visual */
+}
+
+/* Colores base de botones */
+.btn-azul {
+  background-color: #007bff;
+}
+
+.btn-verde {
+  background-color: #28a745;
+}
+
+.btn-rojo {
+  background-color: #dc3545;
+}
+
+.btn-morado {
+  background-color: #6f42c1;
+}
+
+.btn-gris {
+  background-color: #adb5bd;
+}
+
+/* Hover */
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* === MENSAJE DE SIN INTERACCIONES === */
+.no-interacciones {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+}
+
+/* === BUSCADOR === */
+.buscador-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.icono-buscar {
+  color: #555;
+}
+
+.input-buscar {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+/* === HEADER Y DIVIDER === */
+.header-interacciones {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn-agregar-interaccion {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-agregar-interaccion:hover {
+  background-color: #0056b3;
+}
+
+.divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}

@@ -1,0 +1,55 @@
+.barra {
+  background-color: #1c1c1c;
+  color: #d4af37;
+  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contenido-barra {
+  display: flex;                /* 1. Activa el modo fila */
+  justify-content: space-between; /* 2. Empuja el botón al extremo derecho */
+  align-items: center;          /* 3. Centra el botón verticalmente */
+}
+
+/* Opcional: Si quieres que el texto se mantenga alineado a la izquierda 
+   pero el botón tenga su propio espacio */
+.textos-header {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+  color: #cfcfcf;
+}
+
+/* Estilo para tu botón rojo si no lo tienes */
+.btn-rojo {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.btn-rojo:hover {
+  background-color: #c9302c;
+}

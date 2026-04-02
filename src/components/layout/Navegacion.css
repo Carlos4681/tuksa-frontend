@@ -1,0 +1,40 @@
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 25% 75%; /* Sidebar 25%, Main 75% */
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Sidebar específico */
+.sidebar {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Navegación */
+.navegacion a {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navegacion a:hover {
+  color: #007BFF;
+}
+
+/* Contenido principal */
+.caja-contenido {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
