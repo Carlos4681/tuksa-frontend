@@ -5,6 +5,7 @@ Mostrar los datos de la propiedad (título, dirección, precio, tipo, etc.).
 Botón Editar → te redirige a la página de edición (/propiedades/editar/:id).
 Botón Eliminar → abre un SweetAlert, llama al backend (DELETE /propiedades/:id) y si todo sale bien avisa al padre (onPropiedadEliminada). */
 
+
 import React from 'react';
 import './Propiedades.css';
 import { Link } from 'react-router-dom';
@@ -49,11 +50,6 @@ const PropiedadItem = ({ propiedad, onPropiedadEliminada }) => {
     return 'Precio no especificado';
   };
 
-  // Función para construir URL de imagen
-  const construirUrlImagen = (filename) => {
-    return `http://localhost:5000/uploads/propiedades/${filename}`;
-  };
-
   // Función para eliminar propiedad
   const eliminarPropiedad = () => {
     Swal.fire({
@@ -71,7 +67,7 @@ const PropiedadItem = ({ propiedad, onPropiedadEliminada }) => {
           await api.delete(`/propiedades/${propiedad._id}`);
           Swal.fire({
             icon: "success",
-            title: "Propiedad Eliminada",
+            title: "Propiedad Eliminar",
             timer: 2000,
             showConfirmButton: false,
             width: '400px'
@@ -100,9 +96,10 @@ const PropiedadItem = ({ propiedad, onPropiedadEliminada }) => {
           {fotos.map((foto, index) => (
             <img 
               key={index} 
-              src={construirUrlImagen(foto)}
+              src={foto} // 🛠️ CAMBIO QUIRÚRGICO: Se usa la URL completa que viene del backend
               alt={`Imagen ${index + 1} de ${titulo}`}
               className="imagen-propiedad-galeria"
+              onError={(e) => { e.target.src = 'https://via.placeholder.com/400x300?text=Error+al+cargar+imagen'; }}
             />
           ))}
         </div>
