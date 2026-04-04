@@ -96,7 +96,7 @@ const PropiedadItem = ({ propiedad, onPropiedadEliminada }) => {
           {fotos.map((foto, index) => (
             <img 
               key={index} 
-              src={foto} // 🛠️ CAMBIO QUIRÚRGICO: Se usa la URL completa que viene del backend
+              src={`https://api-tuksa-1.onrender.com/uploads/propiedades/${foto}`}
               alt={`Imagen ${index + 1} de ${titulo}`}
               className="imagen-propiedad-galeria"
               onError={(e) => { e.target.src = 'https://via.placeholder.com/400x300?text=Error+al+cargar+imagen'; }}
